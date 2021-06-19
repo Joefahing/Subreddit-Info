@@ -7,46 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subreddit Information</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/180c1d2fdd.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <header>
         <div class="head-container">
-            <img src="./assets/reddit_icon2.png" alt="">
+            <div class="logo">
+                <img src="./assets/reddit_icon2.png" alt="">
+            </div>
             <h3>Subreddit Info</h3>
-            <nav>
+            <nav class="nav-container">
                 <ul>
-                    <li><a href="">Wall Street Bets</a></li>
-                    <li><a href="">Dodge Coin</a></li>
-                    <li><a href="">Meme</a></li>
+                    <li class="nav-item"><a href="">Wall Street Bets</a></li>
+                    <li class="nav-item"><a href="">Dodge Coin</a></li>
+                    <li class="nav-item"><a href="">Meme</a></li>
+                </ul>
+                <ul class="social-media-nav">
+                    <li><a href="https://www.instagram.com/joefahn/"><i class="fab fa-instagram"></i></a> </li>
+                    <li> <a href="https://github.com/Joefahing/Subreddit-Info"><i class="fab fa-github"></i></a> </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <div class="img-container">
+        <div id="icon" class="container content">
+            <div class="img-content">
                 <img src="/assets/wallstreetbets.png" alt="">
             </div>
-            <section>
+            <section id="info">
                 <h3>r/Wall Street Bets</h3>
                 <p>is a subreddit where participants discuss stock and option trading. It has become notable for its
                     colorful and profane jargon, aggressive trading strategies,
                     and for playing a major role in the GameStop short squeeze that caused losses for some U.S.
                     firms and short sellers in a few days in early 2021.</p>
-                <a href="https://www.reddit.com/r/wallstreetbets/"><button>Visit Wall Street Bets</button></a>
+                <a href="https://www.reddit.com/r/wallstreetbets/">
+                    <button class="subreddit-button">Visit Wall Street Bets</button>
+                </a>
             </section>
-            <section>
+            <section id="stats">
                 <div class="info-card">
                     <h5>Start Date</h5>
                     <p>January 31, 2012</p>
                 </div>
                 <div class="info-card">
                     <h5>Follower</h5>
-                    <p>10.6M</p>
+                    <p>10.6 Million</p>
                 </div>
                 <div class="info-card">
                     <h5>Year to Date Growth</h5>
