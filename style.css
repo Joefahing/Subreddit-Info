@@ -121,27 +121,68 @@ button{
 }
 
 
+@media screen and (max-width:950px) {
+    .content{
+        grid-template-columns: 1.25fr 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .hide{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 12rem;
+        grid-template-areas: 
+        "logo"
+        "info"
+        "stat";
+    }
+}
+
 /* Page Style */
 
 /* Header and Navigation */
+
+
 .head-container{
     display: flex;
     align-items: center;
     width: 100%;
     height: 6rem;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem;    
+    position: relative;
+}
+
+.head-container a {
+    text-decoration: none;
 }
 
 .head-container h3{
     font-size: 1.5rem;
 }
 
+.head-container .menu{
+    color:var(--brand-color);
+    font-size: 1.5rem;
+    position: fixed;
+    right: 4rem;
+}
+
 .nav-container{
     margin-left: auto;
+    position: relative;
 }
+
 
 .nav-container ul{
     display: flex;
+}
+
+.nav-container .link-nav{
     gap: 2rem;
 }
 
@@ -158,7 +199,11 @@ button{
 }
 
 .social-media-nav{
-    justify-content: flex-end;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    right: 0;
+    gap: 1rem;
 }
 
 .social-media-nav .fab{
@@ -168,6 +213,64 @@ button{
 
 .social-media-nav .fab:hover{
     color: var(--brand-color-light);
+}
+
+@media screen and (min-width:950px){
+    .head-container .menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px){
+
+
+    .cover{
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        width: 100vw;
+        opacity: 0.95;
+        z-index: 900;
+    }
+    
+    .nav-container{
+        padding:0 ;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .nav-container a, 
+    .nav-container .fab{
+        color: var(--grayscale300);
+    }
+
+    .link-nav{
+        flex-direction: column;
+    }
+
+    .social-media-nav{
+        position: relative;
+        flex-direction: row;
+        margin-top: 2rem;        
+        gap: 1.5rem;
+    }
+    
+    .head-container .menu.active{
+        z-index: 950;
+        color: var(--grayscale300);
+    }
+    .head-container .menu.active:hover{
+        z-index: 950;
+        color: var(--brand-color-light);
+        cursor: pointer;
+    }
+
 }
 
 .logo{
@@ -195,6 +298,12 @@ button{
     justify-content: center;
     gap: 1rem;
     padding: 1rem ;
+}
+
+@media screen and (max-width: 800px) {
+    #info{
+        padding: 0;
+    }
 }
 
 #info h3{
@@ -232,7 +341,9 @@ button{
     grid-area: stat;
     justify-content: space-around;
     align-self: flex-end;
+    flex-wrap: wrap;
 }
+
 
 .info-card h5{
     margin: 0;
@@ -249,4 +360,20 @@ button{
     text-align: center;
 }
 
+/* Media query for stats section */
+@media screen and (max-width: 950px){
+    #stats{
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    .info-card h5{
+        text-align: left;
+        display: inline-block;
+        margin-right: 1.5rem;
+    }
+    .info-card p{
+        display: inline-block;
+    }
+}
 
