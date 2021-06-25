@@ -7,28 +7,28 @@ Task to do
 
 const coverElement = document.querySelector('.cover');
 const navContainerElement = document.querySelector('.nav-container');
-const menuIconElement = document.querySelector('.menu');
+const menuIconElement = document.querySelector('.burger');
 const socialMediaNavElement = document.querySelector('.social-media-nav');
+const closeIconElement = document.querySelector('.close');
 
-
-const hideNav = () => {
-    coverElement.classList.add('hide');
-    navContainerElement.classList.add('hide');
-    menuIconElement.classList.remove('active');
-}
-
-const openNav = () => {
-    coverElement.classList.remove('hide');
-    navContainerElement.classList.remove('hide');
-    menuIconElement.classList.add('active');
+const toggleNav = () => {
+    coverElement.classList.toggle('hide');
+    navContainerElement.classList.toggle('hide');
+    closeIconElement.classList.toggle('hide');
 }
 
 const addListeners = () => {
-    menuIconElement.addEventListener('click', openNav);
-    coverElement.addEventListener('click', hideNav);
-    socialMediaNavElement.addEventListener('click', hideNav);
+    menuIconElement.addEventListener('click', toggleNav);
+    coverElement.addEventListener('click', toggleNav);
+    socialMediaNavElement.addEventListener('click', toggleNav);
+    closeIconElement.addEventListener('click', toggleNav);
 }
 
+const init = () => {
+    coverElement.classList.add('hide');
+    navContainerElement.classList.add('hide');
+    closeIconElement.classList.add('hide');
+}
 addListeners();
-hideNav();
+init();
 
