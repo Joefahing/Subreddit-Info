@@ -120,6 +120,10 @@ button{
     "stat stat";
 }
 
+.menu{
+    cursor: pointer;
+}
+
 
 @media screen and (max-width:950px) {
     .content{
@@ -133,13 +137,18 @@ button{
 }
 
 @media screen and (max-width: 800px){
-    .content{
+    /* .content{
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 12rem;
+        grid-template-rows: 1fr 15rem 15rem;
         grid-template-areas: 
         "logo"
         "info"
         "stat";
+    } */
+    .content{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
     }
 }
 
@@ -165,11 +174,21 @@ button{
     font-size: 1.5rem;
 }
 
+@media screen and (max-width: 400px) {
+    .head-container h3{
+        display: none;
+    }
+}
+
 .head-container .menu{
     color:var(--brand-color);
     font-size: 1.5rem;
     position: fixed;
     right: 4rem;
+}
+
+.head-container .menu:hover{
+    color:var(--grayscale600);
 }
 
 .nav-container{
@@ -261,7 +280,16 @@ button{
         gap: 1.5rem;
     }
     
-    .head-container .menu.active{
+    .head-container .close.hide{
+        display: none;
+    }
+
+      .head-container .close{
+        z-index: 950;
+        color: var(--grayscale300);
+    }
+
+    /* .head-container .menu.active{
         z-index: 950;
         color: var(--grayscale300);
     }
@@ -269,7 +297,8 @@ button{
         z-index: 950;
         color: var(--brand-color-light);
         cursor: pointer;
-    }
+    } */
+
 
 }
 
@@ -303,6 +332,12 @@ button{
 @media screen and (max-width: 800px) {
     #info{
         padding: 0;
+    }
+
+    .img-content img{
+        max-width: none;
+        width: 80%;
+        
     }
 }
 
@@ -374,6 +409,12 @@ button{
     }
     .info-card p{
         display: inline-block;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #stats{
+        align-self: flex-start; 
     }
 }
 
